@@ -1,46 +1,46 @@
 public class SuperHero {
-    private String supername;
-    private String superpower;
-    private String creationYear;
-    private int strength;
+    private String supernavn;
+    private String superkraft;
+    private String oprindelsesår;
+    private String styrke;
 
-    public SuperHero(String supername, String superpower, String creationYear, int strength) {
-        this.supername = supername;
-        this.superpower = superpower;
-        this.creationYear = creationYear;
-        this.strength = strength;
+    public SuperHero(String supername, String superpower, String creationYear, String strength) {
+        this.supernavn = supername;
+        this.superkraft = superpower;
+        this.oprindelsesår = creationYear;
+        this.styrke = strength;
     }
 
     public String getSuperName() {
-        return supername;
+        return supernavn;
     }
 
     public String getSuperPower() {
-        return superpower;
+        return superkraft;
     }
 
     public String getCreationYear() {
-        return creationYear;
+        return oprindelsesår;
     }
 
-    public int getStrength() {
-        return strength;
+    public String getStrength() {
+        return styrke;
     }
 
     public void setSuperName(String supername) {
-        this.supername = supername;
+        this.supernavn = supername;
     }
 
     public void setSuperPower(String superpower) {
-        this.superpower = superpower;
+        this.superkraft = superpower;
     }
 
     public void setCreationYear(String creationYear) {
-        this.creationYear = creationYear;
+        this.oprindelsesår = creationYear;
     }
 
-    public void setStrength(int strength) {
-        this.strength = strength;
+    public void setStrength(String strength) {
+        this.styrke = strength;
     }
 
 }

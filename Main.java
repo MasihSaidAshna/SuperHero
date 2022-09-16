@@ -2,35 +2,40 @@ import java.util.*;
 
 public class Main{
     public static void main(String[] args) {
-        System.out.println("Velkommen til SUPERHERO Universet. \n1. Opret superhelt\n9. Afslut");
-        Scanner sc0 = new Scanner(System.in);
-        Scanner sc1 = new Scanner(System.in);
-        Scanner sc2 = new Scanner(System.in);
-        Scanner sc3 = new Scanner(System.in);
-        Scanner sc4 = new Scanner(System.in);
-        int superMenu = sc0.nextInt();
-        for (int i = 0; i <= 5; i++) {
-            if (superMenu == 1) {
-                System.out.print("Indtast superheltens navn: "); 
-                String supernavn = sc1.next();
-                System.out.print("Indtast superkraft: ");
-                String superkraft = sc2.next();
-                System.out.print("Indtast oprindelsesår: ");
-                String creationYear = sc3.next();
-                System.out.print("Indtast styrke: ");
-                int styrke = sc4.nextInt();
-        
-                System.out.println("Supernavn: " + supernavn + "\nSuperkraft: " + superkraft + "\nOprindelsesår: " + creationYear + "\nStyrke: " + styrke);
+        Scanner sc = new Scanner(System.in);
+        int userChoice = 0;
+        while (userChoice != 9) {        //for (int i = 0; i <= 5; i++) {
+            System.out.println("""
+                ____________________
+                Welcome to the SUPERHERO Universe. 
+                1. Create superhero 
+                9. Terminate
+                ____________________""");
+            userChoice = sc.nextInt();            
+            if (userChoice == 1){
+                System.out.print("Enter the superhero's name: "); 
+                String superName = sc.next();
+                System.out.print("Enter superpower: ");
+                String superPower = sc.next();
+                System.out.print("Enter creation year: ");
+                String creationYear = sc.next();
+                System.out.print("Enter strength: ");
+                String strength = sc.next();
+
+                System.out.println("Supername: " + superName + "\nSuperpower: " + superPower + "\nCreation year: " + creationYear + "\nStrength: " + strength);
                 Database superHeltData = new Database(); 
-                superHeltData.addSuperHero(supernavn, superkraft, creationYear, styrke);
+                superHeltData.addSuperHero(superName, superPower, creationYear, strength);
+                
+                System.out.println("""
+                    ____________________
+                    Superhero created. 
+                    1. Create superhero 
+                    9. Terminate
+                    ____________________""");
             }
             else {break;}
         }
-        sc0.close();
-        sc1.close();
-        sc2.close();
-        sc3.close();
-        sc4.close();
-        System.out.print("Tak for besøget!");
+        sc.close();
+        System.out.print("Thank you for using our services.");
     }
 }
