@@ -26,7 +26,7 @@ public class Main{
                 System.out.print("Enter strength: ");
                 String stringStrength = sc.next();
                 int strength = Integer.parseInt(stringStrength);
-                //System.out.println("Supername: " + superName + "\nSuperpower: " + superPower + "\nCreation year: " + creationYear + "\nStrength: " + strength);
+
                 superHeltData.addSuperHero(superName, superPower, creationYear, strength);
                 
                 System.out.println("""
@@ -40,7 +40,7 @@ public class Main{
             }
             if (userChoice == 3) {
                 //superHeltData.showSuperHeroes(superName, superPower, creationYear, strength);
-                System.out.print("Enter the superhero's name: "); 
+                System.out.println("Enter the superhero's name: "); 
                 String superName = sc.next();
                 superHeltData.searchSuperHeroes(superName);
             }
