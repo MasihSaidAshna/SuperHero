@@ -1,10 +1,10 @@
 public class SuperHero {
     private String supernavn;
     private String superkraft;
-    private String oprindelsesår;
-    private String styrke;
+    private int oprindelsesår;
+    private int styrke;
 
-    public SuperHero(String supername, String superpower, String creationYear, String strength) {
+    public SuperHero(String supername, String superpower, int creationYear, int strength) {
         this.supernavn = supername;
         this.superkraft = superpower;
         this.oprindelsesår = creationYear;
@@ -19,11 +19,11 @@ public class SuperHero {
         return superkraft;
     }
 
-    public String getCreationYear() {
+    public int getCreationYear() {
         return oprindelsesår;
     }
 
-    public String getStrength() {
+    public int getStrength() {
         return styrke;
     }
 
@@ -35,11 +35,11 @@ public class SuperHero {
         this.superkraft = superpower;
     }
 
-    public void setCreationYear(String creationYear) {
+    public void setCreationYear(int creationYear) {
         this.oprindelsesår = creationYear;
     }
 
-    public void setStrength(String strength) {
+    public void setStrength(int strength) {
         this.styrke = strength;
     }
 
