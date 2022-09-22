@@ -6,26 +6,26 @@ public class Database {
     public ArrayList<SuperHero> SuperListe = new ArrayList<SuperHero>();
     private Scanner scDB = new Scanner(System.in);
 
-    public void addSuperHero (String supernavn, String superkraft, int oprindelsesår, int styrke) {
+    public void addSuperHero (String supernavn, String superkraft, int oprindelsesår, int styrke) { 
         SuperHero superhelt = new SuperHero(supernavn, superkraft, oprindelsesår, styrke);
         SuperListe.add(superhelt);
     }
 
     public void showSuperHeroes() {
         System.out.println("____________________\nList of superheroes:\n____________________");
-        for (SuperHero s : SuperListe) {
+        for (SuperHero s : SuperListe) { //Searches for each superhero in arraylist SuperListe
             System.out.println("Supername: " + s.getSuperName() + "\nSuperpower: " + s.getSuperPower() + "\nCreation year: " + s.getCreationYear() + "\nStrength: " + s.getStrength() + "\n____________________");
         }
     }
 
     public void searchSuperHeroes(String supernavn) {
-        Pattern p = Pattern.compile(supernavn);
+        Pattern p = Pattern.compile(supernavn); //Compiles a superhero name as a regular expression 
         if (SuperListe.isEmpty()) {
             System.out.println("List is empty!");
         }
         for (int i = 0; i < SuperListe.size(); i++){
             SuperHero s = SuperListe.get(i);
-            Matcher m = p.matcher(s.getSuperName());
+            Matcher m = p.matcher(s.getSuperName()); //Matches with superhero name pattern
             if (m.find()) {
                 System.out.println("Supername: " + s.getSuperName() + "\nSuperpower: " + s.getSuperPower() + "\nCreation year: " + s.getCreationYear() + "\nStrength: " + s.getStrength());
             }
@@ -41,8 +41,8 @@ public class Database {
             System.out.println("List is empty!");
         }
         for (int i = 0; i < SuperListe.size(); i++){
-            SuperHero s = SuperListe.get(i);
-            if (s.getSuperName().equals(supernavn)) {
+            SuperHero s = SuperListe.get(i); //Assigns superhero in index 'i' to variable 's' 
+            if (s.getSuperName().equals(supernavn)) { //Checks if 's' name property is the same as string supernavn
 
                 System.out.println("""
                     ____________________
@@ -61,19 +61,19 @@ public class Database {
                     scDB.nextLine();
                     s.setSuperName(supername);
                 }
-                if (editChoice == 2) {
+                else if (editChoice == 2) {
                     System.out.print("Enter the superhero's new power: "); 
                     String superpower = scDB.next();
                     scDB.nextLine();
                     s.setSuperPower(superpower);
                 }
-                if (editChoice == 3) {
+                else if (editChoice == 3) {
                     System.out.print("Enter the superhero's new creation year: "); 
                     int creationYear = scDB.nextInt();
                     scDB.nextLine();
                     s.setCreationYear(creationYear);
                 }
-                if (editChoice == 4) {
+                else if (editChoice == 4) {
                     System.out.print("Enter the superhero's new strength: "); 
                     int strength = scDB.nextInt();
                     scDB.nextLine();

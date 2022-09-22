@@ -50,23 +50,23 @@ public class UserInterface {
                 System.out.println("ERROR: INVALID INPUT");
             }
         }
-        if (userChoice == 2) {
+        else if (userChoice == 2) {
             db.showSuperHeroes();
         }
-        if (userChoice == 3) {
+        else if (userChoice == 3) {
             System.out.println("Enter the superhero's name you want to find: "); 
             String superName = sc.next();
             sc.nextLine();
             db.searchSuperHeroes(superName);
         }
-        if (userChoice == 4) {
+        else if (userChoice == 4) {
             System.out.println("Enter the superhero's name you want to edit: "); 
             String superName = sc.next();
             sc.nextLine();
             db.editSuperHero(superName);
             //db.scDB.close();
         }
-        if (userChoice == 5) {
+        else if (userChoice == 5) {
             System.out.println("Enter the superhero's name that you want to delete: "); 
             String superName = sc.next();
             sc.nextLine();
