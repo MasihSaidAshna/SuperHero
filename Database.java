@@ -22,9 +22,10 @@ public class Database {
         if (SuperListe.isEmpty()) {
             System.out.println("List is empty!");
         }
-        for (SuperHero s : SuperListe){
+        for (int i = 0; i < SuperListe.size(); i++){
+            SuperHero s = SuperListe.get(i);
             Matcher m = p.matcher(s.getSuperName());
-            if (/*s.getSuperName().equals(supernavn)*/ m.find()) {
+            if (m.find()) {
                 System.out.println("Supername: " + s.getSuperName() + "\nSuperpower: " + s.getSuperPower() + "\nCreation year: " + s.getCreationYear() + "\nStrength: " + s.getStrength());
             }
             else {
@@ -33,4 +34,35 @@ public class Database {
         }
     }
 
+/*    public void searchSuperHeroes(String supernavn) {
+        Pattern p = Pattern.compile(supernavn);
+        if (SuperListe.isEmpty()) {
+            System.out.println("List is empty!");
+        }
+        for (SuperHero s : SuperListe){
+            Matcher m = p.matcher(s.getSuperName());
+            if (m.find()) {
+                System.out.println("Supername: " + s.getSuperName() + "\nSuperpower: " + s.getSuperPower() + "\nCreation year: " + s.getCreationYear() + "\nStrength: " + s.getStrength());
+            }
+            else {
+                System.out.println("Superhero not found");
+            }
+        }
+    }*/
+
+    public void deleteSuperHero (String supernavn) {
+        if (SuperListe.isEmpty()) {
+            System.out.println("List is empty!");
+        }
+        for (int i = 0; i < SuperListe.size(); i++){
+            SuperHero s = SuperListe.get(i);
+            if (s.getSuperName().equals(supernavn)) {
+                SuperListe.remove(s);
+                System.out.println("Superhero deleted!");
+            }
+            else {
+                System.out.println("Superhero not found");
+            }
+        }
+    }
 }

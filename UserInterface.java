@@ -13,6 +13,7 @@ public class UserInterface {
                 1. Create superhero 
                 2. Show superhero list
                 3. Search superhero
+                4. Delete superhero
                 9. Terminate
                 ____________________""");
             userChoice = sc.nextInt();
@@ -47,10 +48,16 @@ public class UserInterface {
             db.showSuperHeroes();
         }
         if (userChoice == 3) {
-            System.out.println("Enter the superhero's name: "); 
+            System.out.println("Enter the superhero's name you want to find: "); 
             String superName = sc.next();
             sc.nextLine();
             db.searchSuperHeroes(superName);
+        }
+        if (userChoice == 4) {
+            System.out.println("Enter the superhero's name that you want to delete: "); 
+            String superName = sc.next();
+            sc.nextLine();
+            db.deleteSuperHero(superName);
         }
     }
 
